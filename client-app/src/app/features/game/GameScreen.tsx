@@ -1,7 +1,7 @@
 import Card from "../../common/ui/card/Card";
 import Players from "../lobby/Players";
 import CurrentOther from "./CurrentOther";
-import CurrentPlayer from "./CurrentPlayer";
+// import CurrentPlayer from "./CurrentPlayer";
 
 const GameScreen = () => {
   return (
