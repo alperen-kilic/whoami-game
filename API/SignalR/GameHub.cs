@@ -19,5 +19,12 @@ namespace API.SignalR
     {
       await Clients.Group(lobby).SendAsync("SendMessage", message);
     }
+
+    public override async Task OnConnectedAsync()
+    {
+      var httpContext = Context.GetHttpContext();
+      var lobby = httpContext.Request.Query["lobby"];
+      await Groups.AddToGroupAsync(Context.ConnectionId, lobby);
+    }
   }
 }
